@@ -20,15 +20,17 @@ namespace ArkabaleN.Managers
         public static void Initialize(string ProcessName)
         {
 
-            // Check if csgo.exe is running
             if (Process.GetProcessesByName(ProcessName).Length > 0)
+            {
                 m_iProcess = Process.GetProcessesByName(ProcessName)[0];
+                m_pProcessHandle = Imports.OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, false, m_iProcess.Id); // Sets Our ProcessHandle
+            }  
             else
             {
                 MessageBox.Show("Couldn't find Counter-Strike. Please start it first!", "Process not found!", MessageBoxButtons.OK);
                 Application.Exit();
             }
-            m_pProcessHandle = Imports.OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, false, m_iProcess.Id); // Sets Our ProcessHandle
+            
         }
 
         public static int GetModuleAdress(string ModuleName)

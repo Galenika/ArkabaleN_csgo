@@ -10,16 +10,16 @@ namespace ArkabaleN.Other
         {
             List<string> outdatedSignatures = new List<string> { };
 
-            dwGlowObjectManager = MemoryManager.ScanPattern((int)Structs.Base.Client, "A1????????A801754B", 1, 4, true);
-            dwEntityList = MemoryManager.ScanPattern((int)Structs.Base.Client, "BB????????83FF010F8C????????3BF8", 1, 0, true);
-            dwClientState = MemoryManager.ScanPattern((int)Structs.Base.Engine, "A1????????33D26A006A0033C989B0", 1, 0, true);
-            dwForceAttack = MemoryManager.ScanPattern((int)Structs.Base.Client, "890D????????8B0D????????8BF28BC183CE04", 2, 0, true);
-            dwForceAttack2 = MemoryManager.ScanPattern((int)Structs.Base.Client, "890D????8B0D????8BF28BC183CE04", 2, 0, true);
-            dwForceJump = MemoryManager.ScanPattern((int)Structs.Base.Client, "8B0D????????8BD68BC183CA02", 2, 0, true);
-            dwForceLeft = MemoryManager.ScanPattern((int)Structs.Base.Client, "558BEC51538A5D08", 465, 0, true);
-            dwForceRight = MemoryManager.ScanPattern((int)Structs.Base.Client, "558BEC51538A5D08", 512, 0, true);
-            dwLocalPlayer = MemoryManager.ScanPattern((int)Structs.Base.Client, "8D3485????????8915????????8B41088B480483F9FF", 3, 4, true);
-            dwRadarBase = MemoryManager.ScanPattern((int)Structs.Base.Client, "A1????????8B0CB08B01FF50??463B35????????7CEA8B0D", 1, 0, true);
+            dwGlowObjectManager = MemoryManager.ScanPattern(Structs.Base.Client, "A1????????A801754B", 1, 4, true);
+            dwEntityList = MemoryManager.ScanPattern(Structs.Base.Client, "BB????????83FF010F8C????????3BF8", 1, 0, true);
+            dwClientState = MemoryManager.ScanPattern(Structs.Base.Engine, "A1????????33D26A006A0033C989B0", 1, 0, true);
+            dwForceAttack = MemoryManager.ScanPattern(Structs.Base.Client, "890D????????8B0D????????8BF28BC183CE04", 2, 0, true);
+            dwForceAttack2 = MemoryManager.ScanPattern(Structs.Base.Client, "890D????8B0D????8BF28BC183CE04", 2, 0, true);
+            dwForceJump = MemoryManager.ScanPattern(Structs.Base.Client, "8B0D????????8BD68BC183CA02", 2, 0, true);
+            dwForceLeft = MemoryManager.ScanPattern(Structs.Base.Client, "558BEC51538A5D08", 465, 0, true);
+            dwForceRight = MemoryManager.ScanPattern(Structs.Base.Client, "558BEC51538A5D08", 512, 0, true);
+            dwLocalPlayer = MemoryManager.ScanPattern(Structs.Base.Client, "8D3485????????8915????????8B41088B480483F9FF", 3, 4, true);
+            dwRadarBase = MemoryManager.ScanPattern(Structs.Base.Client, "A1????????8B0CB08B01FF50??463B35????????7CEA8B0D", 1, 0, true);
             return outdatedSignatures;
         }
 
@@ -124,8 +124,12 @@ namespace ArkabaleN.Other
         public const Int32 m_dwRadarBasePointer = 0x6C;
         public const Int32 m_dwRadarStructSize = 0x168;
         public const Int32 m_dwRadarStructPos = 0x18;
+        public const Int32 m_bDormant = 0xED;
         #endregion
         public const Int32 IsMenu = 0x8AC77C;
 
+        public const Int32 m_nModelIndex = 0x258;
+        public const Int32 m_hViewModel = 0x32F8;
+        public const Int32 m_iViewModelIndex = 0x3220;
     }
 }
